@@ -6,8 +6,12 @@ ruby "3.0.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
+# Utilizes Sass for a modular and customizable architecture
 gem 'bootstrap', '~> 5.1.3'
+# Active Admin is a Ruby on Rails plugin for generating administration style interfaces
 gem 'activeadmin'
+# Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise'
 
 # The original asset pipelwine for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -57,6 +61,9 @@ group :development, :test do
 end
 
 group :development do
+  # Interface for browsing sent emails.
+  gem 'letter_opener_web', '~> 2.0'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
