@@ -12,6 +12,8 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'activeadmin'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
+# This gem is a port of Perl's Data::Faker library that generates fake data.
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
 # The original asset pipelwine for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
