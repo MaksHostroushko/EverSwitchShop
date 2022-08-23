@@ -16,7 +16,7 @@ gem 'devise'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # Provides higher-level image processing helpers that are commonly needed when handling image uploads.
 gem 'image_processing'
-gem 'activestorage-validator'
+gem 'file_validators'
 gem 'pagy', '~> 0.8.1'
 
 # The original asset pipelwine for Rails [https://github.com/rails/sprockets-rails]
