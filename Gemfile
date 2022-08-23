@@ -14,6 +14,9 @@ gem 'activeadmin'
 gem 'devise'
 # This gem is a port of Perl's Data::Faker library that generates fake data.
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+# Provides higher-level image processing helpers that are commonly needed when handling image uploads.
+gem 'image_processing'
+gem 'activestorage-validator'
 
 # The original asset pipelwine for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
