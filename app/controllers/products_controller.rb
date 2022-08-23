@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update]
+
   def index
-    @products = Product.all
-    logger.debug "The article was saved and now the user is going to be redirected..."
+    @pagy, @products = pagy(Product.all)
   end
 
   def show; end
