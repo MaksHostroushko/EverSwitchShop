@@ -3,9 +3,11 @@ class OrdersController < ApplicationController
     @items = current_order.order_items.order(created_at: :asc)
   end
 
+  def edit; end
+
   def update
     current_order.update(order_params)
-    current_order.ordered!
+    current_order.status_ordered!
     flash.alert = 'Order confirmed'
     redirect_to root_path
   end
@@ -13,6 +15,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(:full_name, :email, :phone)
+    params.permit(:full_name, :email, :phone, :address)
   end
 end
