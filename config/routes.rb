@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root "products#index"
   resources :products do
     resources :order_items, only: %i[create update destroy]
+    collection do
+      post 'fetch_products', as: :fetch
+    end
   end
   resources :orders
 end

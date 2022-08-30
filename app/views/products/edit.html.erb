@@ -12,6 +12,11 @@
       <%= f.text_area :description, class: "form-control" %>
     </div>
 
+    <div class="form-group mt-3">
+      <%= f.label :price, "Description", class: "" %>
+      <%= f.number_field :price, class: "form-control w-50" %>
+    </div>
+
     <div class="form-group mt-3 w-50">
       <%= f.label :images, "Description", class: "" %>
       <%= f.file_field :images, class: "form-control", multiple: true %>
