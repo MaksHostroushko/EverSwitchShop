@@ -19,7 +19,7 @@ User.create(
 p 'User was created'
 
 20.times do
-  Product.create(user: User.first, title: Faker::Commerce.product_name)
+  Product.create(user: User.first, title: Faker::Commerce.product_name, categories: [Category.first])
 end
 '20 Products was created'
 
