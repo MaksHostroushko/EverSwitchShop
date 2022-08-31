@@ -17,16 +17,11 @@ class OrderItemsController < ApplicationController
     @order_item.increment(:quantity, value)
 
     if @order_item.save
-      flash[:alert] = 'Updated'
+      render json: @order_item.quantity, status: :ok
     else
-      flash[:alert] = @order_item.errors.full_messages[0]
+      render json: { error: @order_item.errors.full_messages[0] }
     end
   end
-
-  # def update
-    # @order_item.update(quantity: params[:quantity])
-    # redirect_to order_path(current_order)
-  # end
 
   def destroy
     @order_item.destroy
