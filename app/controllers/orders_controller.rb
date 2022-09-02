@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def show
-    @items = current_order.order_items.order(created_at: :asc)
+    order_items = current_order.order_items.includes(:product)
+    @items = ItemsWithProductsQuery.call(order_items, order_id: current_order.id)
   end
 
   def edit; end

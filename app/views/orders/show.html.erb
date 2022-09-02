@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <% @items.includes(:product).each do |item| %>
+    <% @items.each do |item| %>
       <div class="col-4">
-        <p>Title: <%= item.product.title %></p>
-        <p>Price: <%= item.product.price %></p>
+        <p>Title: <%= item.product_title %></p>
+        <p>Price: <%= item.product_price %></p>
         <p>Quantity: <%= item.quantity %></p>
         <p>
           <%= link_to '+',
