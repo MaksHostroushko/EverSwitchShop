@@ -1,4 +1,4 @@
-class SortProductsQuery
+class SortProductsQuery < ApplicationQuery
   def initialize(products, params)
     @products = products
     @params = params
@@ -15,6 +15,8 @@ class SortProductsQuery
     @products = @products.order(price: @params[:price]) if @params[:price].present?
     @products = @products.where('price >= ?', @params[:min_price]) if @params[:min_price].present?
     @products = @products.where('price <= ?', @params[:max_price]) if @params[:max_price].present?
+
+    @products
   end
 
   def sort_by_categories

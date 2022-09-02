@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update]
 
   def index
-    products = SortProductsQuery.new(Product.all, params).call
+    products = SortProductsQuery.call(Product.all, params)
     @categories = Category.all
     @pagy, @products = pagy(products)
   end
