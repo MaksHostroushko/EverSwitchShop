@@ -10,5 +10,14 @@ Rails.application.routes.draw do
       post 'fetch_products', as: :fetch
     end
   end
-  resources :orders
+  resources :orders do
+    collection do
+      post 'cancel_order', as: :cancel
+    end
+  end
+  resources :users, only: %i[] do
+    collection do
+      get :order_items
+    end
+  end
 end

@@ -14,6 +14,13 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  def cancel_order
+    current_order.status_canceled!
+    session.delete(:order_id)
+
+    redirect_to root_path, notice: 'Order canceled'
+  end
+
   private
 
   def order_params
