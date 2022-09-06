@@ -18,6 +18,8 @@ gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'image_processing'
 gem 'file_validators'
 gem 'pagy', '~> 0.8.1'
+# Patterns
+gem "rails-patterns", "0.8.0"
 
 # The original asset pipelwine for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
