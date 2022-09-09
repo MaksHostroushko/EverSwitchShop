@@ -20,5 +20,6 @@
   </div>
   <% if current_order.order_items.any? %>
     <%= link_to 'Complete Order', edit_order_path(current_order), class: 'btn btn-outline-success mt-2 w-25 ms-auto me-auto' %>
+    <%= link_to 'Cancel Order', order_path(current_order, status: :canceled), data: { "turbo-method": :put }, class: 'btn btn-outline-danger mt-2 w-25 ms-auto me-auto' %>
   <% end %>
 </div>

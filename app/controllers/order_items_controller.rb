@@ -5,7 +5,9 @@ class OrderItemsController < ApplicationController
     if @order_item
       @order_item.increment!(:quantity)
     else
-      @order_item = current_order.order_items.create(product_id: params[:product_id])
+      @order_item = current_order.order_items.build(product_id: params[:product_id])
+      @order_item.save
+      session[:order_id] = @order_item.order_id
     end
 
     redirect_to root_path

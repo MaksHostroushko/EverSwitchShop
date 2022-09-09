@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   has_many :products, dependent: :nullify
+  has_many :orders, dependent: :nullify
 
   validates :name, presence: true
 
