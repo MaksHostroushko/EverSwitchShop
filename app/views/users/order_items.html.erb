@@ -1,0 +1,36 @@
+<div class="container">
+  <h3>My Orders</h3>
+  <% @orders.each do |order| %>
+    <div class="col-12 p-3 mt-4 border border-success">
+      <div class="row">
+        <div class="col-1">
+          <span class="badge rounded-pill <%= status_badge(order) %> d-block w-25 h-100"></span>
+        </div>
+        <div class="col-2">
+          Status: <%= order.status.humanize %>
+        </div>
+        <div class="col-2">
+          Total Amount: <%= order.total_price %>
+        </div>
+        <div>
+          <div class="ms-5">
+            <% order.products.each do |product| %>
+              <div class="row p-3">
+                <div class="col-1 ms-5">
+                  <% if product.images.attached? %>
+                    <%= image_tag product.images.first.variant(:thumbnail) %>
+                  <% else %>
+                    <%= image_tag 'default_image.png', width: 75, height: 75 %>
+                  <% end %>
+                </div>
+                <div class="col-5 mt-auto mb-auto">
+                  <%= link_to product.title, product_path(product) %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
