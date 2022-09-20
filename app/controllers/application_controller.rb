@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin!
-    redirect_to new_user_session_path if current_user.nil?
+    return redirect_to new_user_session_path if current_user.nil?
     redirect_to root_path unless current_user&.role_admin?
   end
 
