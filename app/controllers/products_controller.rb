@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     products = SortProductsQuery.call(Product.all, params)
-    @categories = Category.all
+    @categories = Category.left_joins(:products).group(:id).select('categories.*, COUNT(products.id) as products_count')
     @pagy, @products = pagy(products)
   end
 
