@@ -9,7 +9,7 @@
             <p>Price: <%= product.price %></p>
 
             <%= link_to 'Delete', product_path(product), class: 'btn btn-outline-danger', data: { "turbo-method": :delete } %>
-            <%= link_to 'Add to Cart', product_order_items_path(product), data: { "turbo-method": :post }, class: 'btn btn-outline-success' %>
+            <%= button_to 'Add to Cart', product_order_items_path(product), data: { "turbo": false }, class: 'btn btn-outline-success' %>
           </div>
         <% end %>
       </div>
