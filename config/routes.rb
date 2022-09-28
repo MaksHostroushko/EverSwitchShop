@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   root "products#index"
-  resources :products do
+  resources :products, except: :new do
     resources :order_items, only: %i[create update destroy]
     collection do
       post 'fetch_products', as: :fetch

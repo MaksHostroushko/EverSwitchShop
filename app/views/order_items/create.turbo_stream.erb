@@ -1,0 +1,11 @@
+<%= turbo_stream.update "cart-items-count" do %>
+  <%= current_order.order_items.size %>
+<% end %>
+
+<%= turbo_stream.update "flash-messages-list" do %>
+  <%= render 'shared/flash_messages' %>
+<% end %>
+
+<%= turbo_stream.update "cart-with-products-icon" do %>
+  <%= render 'order_items/cart_link' %>
+<% end %>

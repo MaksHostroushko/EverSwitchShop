@@ -13,6 +13,7 @@ module TestShop
     config.active_storage.variant_processor = :mini_magick
     config.assets.precompile += %w(admin/active_admin.js admin/active_admin.css.scss)
     config.factory_bot.definition_file_paths = ["factories"]
+    config.active_storage.replace_on_assign_to_many = false
 
     # Configuration for the application, engines, and railties goes here.
     #

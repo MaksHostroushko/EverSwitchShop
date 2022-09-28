@@ -2,14 +2,17 @@
 
 class ProductPolicy < ApplicationPolicy
   def index?
-    false
+    true
   end
 
   def show?
-    false
+    true
   end
 
-  def fetch_products?
+  def edit?
     user.present? && user.role_admin?
   end
+  alias_method :fetch_products?, :edit?
+  alias_method :update?, :edit?
+  alias_method :destroy?, :edit?
 end
