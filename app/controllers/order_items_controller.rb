@@ -22,12 +22,9 @@ class OrderItemsController < ApplicationController
     @order_item.increment(:quantity, value)
 
     if @order_item.save
-      respond_to do |format|
-        format.turbo_stream
-      end
-
+      render json: { quantity: @order_item.quantity }, status: :ok
     else
-      render json: { error: @order_item.errors.full_messages[0] }
+      render json: { quantity: @order_item.quantity }, status: :unprocessable_entity
     end
   end
 
