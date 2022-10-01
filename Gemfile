@@ -24,6 +24,8 @@ gem "rails-patterns", "0.8.0"
 gem 'factory_bot_rails'
 # Restrictions
 gem "pundit"
+gem "jquery-rails"
+gem "sassc-rails"
 
 # The original asset pipelwine for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

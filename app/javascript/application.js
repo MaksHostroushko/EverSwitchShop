@@ -3,3 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import 'bootstrap'
 import "@fortawesome/fontawesome-free"
+import "jquery"
+import "jquery_ujs"
